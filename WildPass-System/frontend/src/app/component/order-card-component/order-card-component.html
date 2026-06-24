@@ -1,0 +1,50 @@
+<form [formGroup]="newF" (ngSubmit)="onSubmit()">
+    
+  <input type="text" placeholder="הקש תעודת זהות" formControlName="idVisitors"><br>
+  <div *ngIf="newF.get('idVisitors')?.invalid && (newF.get('idVisitors')?.dirty || newF.get('idVisitors')?.touched)">
+    <p *ngIf="newF.get('idVisitors')?.hasError('required')">שדה חובה</p>
+    <p *ngIf="newF.get('idVisitors')?.hasError('minlength')">תעודת זהות קצרה מדי</p>
+    <p *ngIf="newF.get('idVisitors')?.hasError('maxlength')">תעודת זהות ארוכה מדי</p>
+  </div>
+
+  <input type="email" placeholder="הקש כתובת מייל" formControlName="emailVisitors"><br>
+  <div *ngIf="newF.get('emailVisitors')?.invalid && (newF.get('emailVisitors')?.dirty || newF.get('emailVisitors')?.touched)">
+    <p *ngIf="newF.get('emailVisitors')?.hasError('required')">שדה חובה</p>
+    <p *ngIf="newF.get('emailVisitors')?.hasError('email')">פורמט מייל לא תקין</p>
+  </div>
+
+  <input type="text" placeholder="הקש שם פרטי" formControlName="nameVisitors"><br>
+  <div *ngIf="newF.get('nameVisitors')?.invalid && (newF.get('nameVisitors')?.dirty || newF.get('nameVisitors')?.touched)">
+    <p *ngIf="newF.get('nameVisitors')?.hasError('required')">שדה חובה</p>
+    <p *ngIf="newF.get('nameVisitors')?.hasError('pattern')">מכיל רק אותיות ורווחים</p>
+  </div>
+
+  <input type="date" placeholder="הקש תאריך ביקור" formControlName="visitDate"><br>
+  <div *ngIf="newF.get('visitDate')?.invalid && (newF.get('visitDate')?.dirty || newF.get('visitDate')?.touched)">
+    <p *ngIf="newF.get('visitDate')?.hasError('required')">שדה חובה</p>
+  </div>
+
+  <input type="number" placeholder="הקש מספר כרטיסים מבוגרים" formControlName="numAdult" min="1"><br>
+  <div *ngIf="newF.get('numAdult')?.invalid && (newF.get('numAdult')?.dirty || newF.get('numAdult')?.touched)">
+    <p *ngIf="newF.get('numAdult')?.hasError('required')">שדה חובה</p>
+    <p *ngIf="newF.get('numAdult')?.hasError('min')">מספר כרטיסים חייב להיות לפחות 1</p>
+  </div>
+
+  <input type="number" placeholder="הקש מספר כרטיסים ילדים" formControlName="numChild" min="0"><br>
+  <div *ngIf="newF.get('numChild')?.invalid && (newF.get('numChild')?.dirty || newF.get('numChild')?.touched)">
+    <p *ngIf="newF.get('numChild')?.hasError('required')">שדה חובה</p>
+    <p *ngIf="newF.get('numChild')?.hasError('min')">מספר כרטיסים חייב להיות לפחות 0</p>
+  </div>
+
+  <button type="submit" [disabled]="newF.invalid">אישור</button>
+</form>
+
+
+
+<div *ngIf="showConfirmation" style="margin-top:1rem;">
+  <p>המחיר לתשלום: ₪{{ totalPrice }}</p>
+  <p>תודה שפנית אלינו</p>
+</div>
+
+
+

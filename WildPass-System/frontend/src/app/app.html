@@ -1,0 +1,8 @@
+<button routerLink="/HomePage">דף הבית</button>
+<p *ngIf="s.flag">שלום ל{{ s.v.nameVisitors }}</p>
+<button *ngIf="s.flag" (click)="logout()">התנתקות</button>
+<button *ngIf="!s.flag" routerLink="/LogIn">כניסה</button>
+<button routerLink="/OurAnimals">החיות שלנו</button>
+<button routerLink="/OrderCard">הזמת כרטיסים</button>
+<button *ngIf="s.flag" routerLink="/PersonalArea">אזור אישי</button>
+<router-outlet></router-outlet>

@@ -1,0 +1,16 @@
+<p *ngIf="s.v">שלום, {{ s.v.nameVisitors }}</p>
+
+<div *ngFor="let item of tickets">
+  <div>
+    🎟️ הזמנה #{{ item.codeTickets }}
+  </div>
+
+  <div class="ticket-body">
+    <p><span>תעודת זהות:</span> {{ item.idVisitors }}</p>
+    <p><span>תאריך ביקור:</span> {{ item.visitDate | date:'dd/MM/yyyy' }}</p>
+    <p><span>מחיר:</span> {{ item.priceTickets | currency:'ILS' }}</p>
+    <p><span>מבוגרים:</span> {{ item.numAdult }}</p>
+    <p><span>ילדים:</span> {{ item.numChild }}</p>
+  </div>
+</div>
+

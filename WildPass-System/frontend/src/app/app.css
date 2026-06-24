@@ -1,0 +1,70 @@
+
+/* --- עיצוב הכפתורים בלבד --- */
+
+/* עיצוב כפתורי הניווט הסטנדרטיים */
+button {
+    background: rgba(255, 255, 255, 0.9); /* רקע לבן חצי שקוף */
+    color: #2c3e50;
+    border: 2px solid #27ae60; /* מסגרת ירוקה עדינה */
+    padding: 10px 22px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    border-radius: 30px; /* מראה מעוגל ויפה */
+    cursor: pointer;
+    font-family: inherit;
+    margin: 5px; /* מרווח קל בין כפתור לכפתור */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+/* אפקט ריחוף (Hover) על הכפתורים הרגילים */
+button:hover {
+    background-color: #27ae60;
+    color: white;
+    transform: translateY(-2px); /* קפיצה קלה למעלה */
+    box-shadow: 0 6px 15px rgba(39, 174, 96, 0.3);
+}
+
+/* עיצוב מיוחד ומודגש לכפתור "הזמנת כרטיסים" כדי שיבלוט */
+button[routerLink="/OrderCard"] {
+    background: #27ae60;
+    color: white;
+    border-color: #27ae60;
+}
+
+button[routerLink="/OrderCard"]:hover {
+    background: #219653;
+    border-color: #219653;
+}
+
+/* עיצוב כפתור התנתקות (צבע אדום) */
+button:not([routerLink]) {
+    color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+button:not([routerLink]):hover {
+    background-color: #e74c3c;
+    color: white;
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.3);
+}
+
+/* עיצוב בועת הטקסט "שלום ל..." */
+p {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: #27ae60;
+    margin: 5px 10px;
+    padding: 9px 18px;
+    background: #eafaf1;
+    border-radius: 20px;
+    border: 1px solid rgba(39, 174, 96, 0.2);
+}
+
+/* הוספת אייקון של יד מנפנפת לפני השם */
+p::before {
+    content: "👋";
+}

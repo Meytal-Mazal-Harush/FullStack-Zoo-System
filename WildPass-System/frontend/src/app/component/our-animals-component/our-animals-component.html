@@ -1,0 +1,9 @@
+<p>our-animals-component works!</p>
+
+<img *ngFor="let i of allAnimals" [src]="i.image" (click)="onImageClick(i)" />
+<div *ngIf="showAnimal">
+   <h3>{{animal.nameAnimals}}</h3>
+   <p>{{animal.description}}</p>
+   <button class="close-caption" (click)="closeCaption()">סגירה</button>
+</div>
+

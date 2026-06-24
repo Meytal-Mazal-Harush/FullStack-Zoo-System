@@ -1,0 +1,17 @@
+<h1>כניסה</h1>
+<form #logIn ="ngForm" (ngSubmit)="enter()">
+    <input type="text" placeholder="ת.ז"  required pattern="[0-9]{1,}" maxLength="9" [(ngModel)]="s.v.idVisitors" name="tz" #tz="ngModel"><br>
+    <div *ngIf ="tz.invalid && tz.dirty">
+        <p *ngIf ="tz.hasError('required')">שדה חובה</p>
+        <p *ngIf ="tz.hasError('pattern')">מכיל רק מספרים</p>
+    </div>
+     <input type="email" placeholder="מייל" required email [(ngModel)]="s.v.emailVisitors" name="Email" #Email="ngModel"><br>
+     <div *ngIf ="Email.invalid && Email.dirty">
+        <p *ngIf ="Email.hasError('required')">שדה חובה</p>
+        <p *ngIf ="Email.hasError('email')">המייל אינו תקין</p>
+    </div>
+    <input type="submit" value="אישור" [disabled]="!logIn.valid"><br>
+</form>
+
+
+

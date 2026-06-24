@@ -1,0 +1,16 @@
+/* הגדרות גלובליות לכל האתר */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* הרקע המשותף והשווה לכל הדפים */
+    background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+    background-attachment: fixed; /* גורם לרקע להישאר קבוע ומלוטש גם בגלילה */
+    font-family: Arial, Helvetica, sans-serif;
+    direction: rtl; /* כיווניות עברית לכל האתר */
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}

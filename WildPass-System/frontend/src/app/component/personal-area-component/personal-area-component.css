@@ -1,0 +1,125 @@
+
+
+/* הגדרת הרקע הכללי של העמוד כולל ה-Gradient שביקשת */
+:host {
+   
+display: block;
+    padding: 40px 20px;
+}
+
+/* עטיפת התוכן הראשי (מתלבש אוטומטית על האלמנטים בדף) */
+:host > p {
+    max-width: 1100px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #27ae60;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    
+    animation: slideDown 1s ease;
+}
+
+
+:host > div {
+    max-width: 1100px;
+    margin: 15px auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-right: 6px solid #27ae60;
+    border-left: none; 
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    animation: slideRight 1s ease;
+    transition: all 0.3s ease;
+}
+
+:host > div:hover {
+    transform: scale(1.02) translateX(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    background: #f8fff8;
+}
+
+:host > div > div:first-child {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eafaf1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ticket-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1px)); 
+    gap: 15px;
+}
+
+
+.ticket-body p {
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.ticket-body p span {
+    font-weight: bold;
+    color: #27ae60;
+}
+
+button {
+    display: block;
+    margin: 30px auto 0 auto;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+    transition: all 0.3s ease;
+    animation: fadeIn 1.5s ease;
+}
+
+button:hover {
+    background: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+}
+
+/* --- הגדרות האנימציה שביקשת --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,175 @@
+
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    overflow-x: hidden;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 500px; 
+    box-sizing: border-box;
+    animation: slideDown 1s ease;
+}
+
+
+form::before {
+    content: "הזמנת כרטיסים";
+    display: block;
+    color: #27ae60;
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"] {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 10px 0;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px; 
+    font-size: 1.05rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #fcfcfc;
+    font-family: inherit;
+}
+
+input:focus {
+    border-color: #27ae60;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(39, 174, 96, 0.2);
+}
+
+
+input[type="date"] {
+    color: #444;
+}
+
+form div:not([style*="margin-top"]) {
+    text-align: right;
+    padding: 0 15px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    animation: fadeIn 0.3s ease;
+}
+
+form div p {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin: 4px 0;
+    font-weight: bold;
+}
+
+form div p::before {
+    content: "⚠ ";
+    margin-left: 4px;
+}
+
+
+button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 50px;
+    background: #27ae60;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+
+button[type="submit"]:not(:disabled):hover {
+    background: #219653;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+}
+
+
+button[type="submit"]:disabled {
+    background: #bdc3c7;
+    color: #7f8c8d;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+
+:host > div {
+    background: #fff;
+    border-right: 6px solid #27ae60;
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: 25px !important; 
+    
+
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+:host > div p {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 8px 0;
+}
+
+
+:host > div p:first-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+br {
+    display: none;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
