@@ -32,3 +32,6 @@ A comprehensive Full-Stack web application designed for browsing animal attracti
 * **Frontend:** Angular (TypeScript, Components, Services, RxJS)
 * **Backend:** C# / .NET (Web API, Routing, Controllers)
 * **State & Security:** Token-based or Session-based Authentication logic
+
+## 📌 Project Status
+This project is completed and serves as a full-stack portfolio demonstration.
